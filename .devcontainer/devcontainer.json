@@ -36,5 +36,6 @@
     "containerEnv": {
         "PYTHONPATH": "/workspaces/project"
     },
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    "remote.containers.copyGitConfig": true
 }
