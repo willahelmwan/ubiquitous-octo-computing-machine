@@ -1,0 +1,40 @@
+{
+    "name": "Python project",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.jupyter",
+        "ms-python.vscode-pylance"
+    ],
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [
+        8888,
+        8890,
+        9080,
+        9081,
+        9443,
+        6006,
+        3000
+    ],
+    "postCreateCommand": "python setup.py develop --user",
+    "runArgs": [
+        "-e",
+        "NVIDIA_DISABLE_REQUIRE=true"
+        //"--gpus=all"
+    ],
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "containerEnv": {
+        "PYTHONPATH": "/workspaces/project"
+    },
+    "remoteUser": "vscode"
+}

@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install GH CLI",
+            "type": "shell",
+            "command": "wget --quiet https://github.com/cli/cli/releases/download/v2.8.0/gh_2.8.0_linux_amd64.deb -O gh_2.8.0_linux_amd64.deb&&dpkg --install gh_2.8.0_linux_amd64.deb",
+            "problemMatcher": []
+        },
+        {
+            "label": "Install AWS SSO",
+            "type": "shell",
+            "command": "pip install -q aws-sso-util && aws-sso-util configure profile default --sso-start-url https://d-9067686e64.awsapps.com/start --sso-region us-east-1 --account-id 928097140335 --role-name AdministratorAccess --region us-west-2",
+            "problemMatcher": []
+        },
+        {
+            "label": "Login GH",
+            "dependsOn": "Install GH CLI",
+            "type": "shell",
+            "command": "gh config set prompt disabled && gh auth login -w --hostname github.com -p https && gh auth setup-git",
+            "problemMatcher": []
+        },
+        {
+            "label": "Login AWS",
+            "dependsOn": "Install AWS SSO",
+            "type": "shell",
+            "command": "aws-sso-util login",
+            "problemMatcher": []
+        },
+        {
+            "label": "Install Package",
+            "type": "shell",
+            "command": "python3 setup.py develop --user",
+            "problemMatcher": []
+        }
+    ]
+}
