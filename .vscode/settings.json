@@ -35,5 +35,14 @@
     ],
     "python.linting.pydocstyleEnabled": false,
     "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "terminal.integrated.env.linux": {
+        "bash": "/bin/bash"
+    },
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash"
 }
