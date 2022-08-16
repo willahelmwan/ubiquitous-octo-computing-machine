@@ -45,5 +45,6 @@
             "path": "/bin/bash"
         }
     },
-    "terminal.integrated.defaultProfile.linux": "bash"
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "autoDocstring.docstringFormat": "google"
 }

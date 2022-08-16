@@ -1,0 +1,14 @@
+[tool.pyright]
+include = ["mypackage"]
+exclude = ["**/node_modules", "**/__pycache__", "build/**", "wheel/**"]
+
+useLibraryCodeForTypes = true
+
+[tool.bandit]
+line-length = 120
+skips = ["B101", "B601"]
+
+[build-system]
+requires = ["setuptools >= 40.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
