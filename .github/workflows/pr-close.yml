@@ -13,4 +13,4 @@ jobs:
 
     - name: Print source branch name
       run: |
-        echo "hello"
+        echo "${{ github.head_ref }}"
