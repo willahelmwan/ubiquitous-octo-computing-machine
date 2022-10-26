@@ -7,14 +7,8 @@
 # or a standard, CPU python
 FROM python:3.9.13-slim-buster
 
-RUN python3 -m pip install --upgrade build
 
-ADD pyproject.toml /
-ADD setup.cfg /
-ADD setup.py /
-RUN python3 -m build
-RUN python3 -m pip install -e .[dev]
-# RUN python3 -m pip install -U pip autopep8 bandit black pydantic
+RUN python3 -m pip install -U pip autopep8 bandit black pydantic pytest
 
 
 # Create a non-root user
