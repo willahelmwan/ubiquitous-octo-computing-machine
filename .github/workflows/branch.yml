@@ -1,0 +1,15 @@
+name: Branch build
+
+# Triggers the workflow on push or pull request events
+on: push
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print source branch name
+        run: |
+          export LATESTLOG=$(git log -1 --pretty=%B)
+          export SOURCEBRANCH=$(echo $LATESTLOG | awk -F '\\\\n' '{print $1}' |  awk -F '/' '{print $2}' | awk '{print $1}')
+          echo "SOURCEBRANCH:$SOURCEBRANCH"
