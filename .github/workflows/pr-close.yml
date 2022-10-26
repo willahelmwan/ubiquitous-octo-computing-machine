@@ -12,5 +12,5 @@ jobs:
     steps:
 
     - name: Print source branch name
-        run: |
-          echo "hello"
+      run: |
+        echo "hello"
