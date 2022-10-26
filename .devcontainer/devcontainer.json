@@ -4,6 +4,11 @@
         "dockerfile": "Dockerfile"
     },
     "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/bash"
+            }
+        },
         "python.defaultInterpreterPath": "/usr/bin/python",
         "python.linting.enabled": true,
         "python.linting.pylintEnabled": true
@@ -12,7 +17,8 @@
         "ms-python.python",
         "ms-toolsai.jupyter-renderers",
         "ms-toolsai.jupyter",
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring"
     ],
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
