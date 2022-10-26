@@ -14,6 +14,7 @@ jobs:
 
       - name: Print source branch name
         run: |
+          echo "GITHUB_REF:$GITHUB_REF"
           export LATESTLOG=$(git log -1 --pretty=%B)
           echo "$(git log -1 --pretty=%B)"
           export SOURCEBRANCH=$(echo $LATESTLOG | awk -F '\\\\n' '{print $1}' |  awk -F '/' '{print $2}' | awk '{print $1}')
