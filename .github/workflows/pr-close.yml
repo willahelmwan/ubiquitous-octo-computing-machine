@@ -1,0 +1,17 @@
+name: PR Close
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - new_branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Print source branch name
+      if: github.event.pull_request.merged == true
+      run: |
+        echo "${{ github.head_ref }}"
