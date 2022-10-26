@@ -12,5 +12,6 @@ jobs:
     steps:
 
     - name: Print source branch name
+      if: github.event.pull_request.merged == true
       run: |
         echo "${{ github.head_ref }}"
